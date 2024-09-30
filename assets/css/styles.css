@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Estilos globais */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header.bg-light {
+    background-color: #000000 !important;
+}
+
+header .nav-item a {
+    color: red;
+    font-family: "Montserrat", sans-serif;
+}
+
+.nav-item a:hover {
+    color: #fff;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.logo {
+    max-width: 80px;
+}
+
+.box-intro {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero_intro {
+    position: relative;
+    padding: 10rem;
+    background-image: url('../img/img-personas/friends-watching-streaming-service-together-indoors.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero_intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.24) 70%, rgb(0, 0, 0));
+    /* Degradê com transição para a próxima seção */
+    z-index: 1;
+}
+
+.hero_intro>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* responsividade hero_intro */
+@media (max-width: 768px) {
+    .hero_intro {
+        display: flex;
+        width: 100%;
+        /* Garante que ocupe toda a largura */
+        margin: 0 auto;
+
+        background-image: url('../img/img-personas/friends-watching-streaming-service-together-indoors.jpg');
+
+    }
+
+    .hero_intro .logotipo img {
+        width: 150px;
+    }
+
+    .box-intro {
+        margin: 0 auto;
+        display: flex;
+        padding: 6rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .text-intro {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero_intro {
+        padding: 2rem;
+        background-image: url('../img/img-personas/friends-watching-streaming-service-together-indoors.jpg');
+    }
+
+    .box-intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+}
+
+
+.logotipo {
+    max-width: 300px;
+}
+
+.text-intro p {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    width: 50%;
+}
+
+/* section series recentes */
+.title-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.title-section span {
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+}
+
+.title-section::after {
+    content: "";
+    display: block;
+    width: 10%;
+    height: 2px;
+    background: #cc0000;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+/* Sombra com gradiente nas imagens do carrossel */
+.carousel-item {
+    width: 100%;
+    height: auto;
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/* Gradiente */
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 30%),
+        /* Gradiente de baixo para cima */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 30%),
+        /* Gradiente de cima para baixo */
+        linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 30%),
+        /* Gradiente da esquerda para a direita */
+        linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 30%);
+    /* Gradiente da direita para a esquerda */
+    z-index: 1;
+    pointer-events: none;
+
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-caption h5 {
+    margin: 0;
+}
+
+.carousel-caption p {
+    font-size: 12px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel-inner {
+
+    height: 100vh;
+
+}
+
+
+.recent-series .card,
+.my-series .card {
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.recent-series .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recent-series .card-title,
+.my-series .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.recent-series .card-text,
+.my-series .card-text {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.card-body-info {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
+    color: #fff;
+    padding: 50px;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.card-text-info {
+    width: 50%;
+}
+
+.contato {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.profile {
+    display: flex;
+
+    gap: 20px;
+    align-items: center;
+}
+
+.foto-perfil img {
+    max-width: 150px;
+    border-radius: 999px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.redes-sociais {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.redes-sociais a {
+    transition: all 0.3s ease-in-out;
+}
+
+.redes-sociais a:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(110%);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .card-body-info {
+        padding: 30px;
+        /* Reduz o padding para telas menores */
+        backdrop-filter: blur(20px);
+        /* Menos desfoque */
+    }
+
+    .card-info {
+        flex-direction: column;
+        /* Muda para coluna em telas menores */
+        align-items: center;
+        /* Centraliza os itens */
+    }
+
+    .card-text-info {
+        font-size: 15px;
+        width: 100%;
+        /* Ocupar toda a largura disponível */
+
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contato {
+        width: 100%;
+        /* Ocupar toda a largura */
+    }
+
+    .foto-perfil img {
+        max-width: 120px;
+        /* Reduz a largura da imagem */
+    }
+
+    .redes-sociais {
+        gap: 20px;
+        /* Reduz o espaço entre os itens */
+        display: inline;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body-info {
+        padding: 20px;
+        /* Padding ainda menor para telas pequenas */
+    }
+
+    .card-info {
+        align-items: center;
+        /* Garante que os itens fiquem centralizados */
+    }
+
+    .redes-sociais {
+        flex-direction: column;
+        /* Empilha os ícones em telas muito pequenas */
+        align-items: center;
+        /* Centraliza os ícones */
+    }
+
+    .redes-sociais a {
+        margin: 5px 0;
+        /* Adiciona espaçamento vertical entre os ícones */
+    }
+}
+
+/* Estilos para o botão */
+.btn {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.btn-primary {
+    background-color: red;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+/* Estilos informações aluno */
+.student-info,
+.my-series {
+    background-color: #000;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.student-info h2,
+.my-series h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* hero final */
+
+.hero_final {
+    position: relative;
+    padding: 10rem;
+    background-image: url('../img/img-personas/couple-watching-streaming-service-together.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero_final::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.24) 70%, rgb(0, 0, 0));
+    z-index: 1;
+}
+
+.hero_final>* {
+    position: relative;
+    z-index: 2;
+}
+
+.box-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer {
+    margin-top: 150px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.footer a {
+    color: red;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: royalblue;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .hero_final {
+        padding: 5rem;
+        background-image: url('../img/img-personas/couple-watching-streaming-service-together.jpg');
+    }
+
+    .box-final {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logotipo img {
+        width: 150px;
+    }
+
+    .footer {
+        margin-top: 100px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero_final {
+        padding: 2rem;
+    }
+
+    .footer {
+        margin-top: 80px;
+        padding: 5px;
+    }
+
+    .footer a {
+        font-size: 14px;
+    }
+}
+
+
+/* PAGINA DETALHES */
+/* Estilos para a página de detalhes */
+
+.container-details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.serie-details,
+.elenco,
+.temporadas-episodios {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.serie-details h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.serie-details p.lead {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.serie-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.serie-details ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.serie-details ul li strong {
+    color: #ccc;
+}
+
+/* Estilos para a seção de Elenco */
+
+
+.elenco h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.elenco img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Estilos para a seção de Temporadas e Episódios */
+
+.row-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 80%;
+    margin-top: 40px;
+}
+
+.row-1 h4 {
+    text-align: center;
+}
+
+.temporadas-episodios h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.temporadas-episodios h4 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.temporadas-episodios ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.temporadas-episodios ul li {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Estilos da seção de pesquisa */
+.search-section {
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Estilos da barra de filtros */
+.filter-bar {
+    font-family: "Montserrat", sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+
+}
+
+.card-explorer {
+    border-radius: 10px;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #fff;
+}
+
+.card-explorer img {
+    border-radius: 10px;
+}
+
+/* Estilos dos cards de séries */
+.card {
+    margin-bottom: 20px;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 8px;
+}
+
+.card img {
+    border-radius: 8px 8px 0 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de foco para botões e campos */
+input:focus,
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .filter-bar {
+        margin-bottom: 20px;
+    }
+
+    .search-section {
+        margin-bottom: 20px;
+    }
+
+    .student-info h2,
+    .my-series h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* pagina sobre */
+.container-sobre {
+    width: 80%;
+    padding: 20px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    margin: 0 auto;
+}
+
+.hero_intro-sobre {
+    position: relative;
+    padding: 10rem;
+    background-image: url('../img/img-personas/woman-watching-movie-streaming-service-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero_intro-sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.24) 70%, rgb(0, 0, 0));
+    /* Degradê com transição para a próxima seção */
+    z-index: 1;
+}
+
+.hero_intro-sobre>* {
+    position: relative;
+    z-index: 2;
+}
