@@ -1,0 +1,27 @@
+{
+    "perfil": [
+      {
+        "id": 1,
+        "nome": "Samuel Mascarenhas",
+        "curso": "Ciências da Computação",
+        "email": "seuemail@example.com",
+        "facebook": "https://facebook.com/seu-perfil",
+        "twitter": "https://twitter.com/seu-perfil",
+        "instagram": "https://instagram.com/seu-perfil",
+        "mini_bio": "Sou um estudante apaixonado por tecnologia e desenvolvimento de sistemas, com interesse em APIs, bancos de dados e front-end. Tenho experiência com desenvolvimento de aplicações web e sou sempre curioso para aprender novas tecnologias."
+      }
+    ],
+    "series_favoritas": [
+      {
+        "id": 1,
+        "serie_id": 12345,
+        "usuario_id": 1
+      },
+      {
+        "id": 2,
+        "serie_id": 67890,
+        "usuario_id": 1
+      }
+    ]
+  }
+  
