@@ -169,14 +169,17 @@ header .nav-item a {
 /* Sombra com gradiente nas imagens do carrossel */
 .carousel-item {
     width: 100%;
-    height: auto;
+  height: auto;
+    cursor: pointer;
+    border-radius: 990px;
 }
 
 
 .carousel-item img {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
+    object-fit:contain;
+  
 }
 
 
@@ -209,15 +212,19 @@ header .nav-item a {
     color: white;
     text-align: center;
     width: 100%;
+    
 }
 
 .carousel-caption h5 {
+    font-size: 25px;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
 }
 
 .carousel-caption p {
-    font-size: 12px;
-    width: 60%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;  /* Tamanho da fonte para leitura mais fácil */
+    width: 80%;  /* Aumenta a largura do parágrafo para melhorar a legibilidade */
     margin: 0 auto;
     text-align: center;
 }

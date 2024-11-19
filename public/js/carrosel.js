@@ -1,4 +1,4 @@
-const apiUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=59eac9a58139309f3425af18ab34638c&language=pt-BR&page=1&sort_by=popularity.desc'; // Atualize com a chave da API
+const apiUrl = 'https://api.themoviedb.org/3/tv/popular?api_key=59eac9a58139309f3425af18ab34638c&language=pt-BR&page=1&sort_by=popularity.desc'; // Atualize com a chave da API
 const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OWVhYzlhNTgxMzkzMDlmMzQyNWFmMThhYjM0NjM4YyIsIm5iZiI6MTczMTk1MzU1Ny42Nzg5NjcsInN1YiI6IjY3M2I4MmEyNzNhNDVlNTE4NGJmYjc5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yGE05VSXU-NIZTLc9n8iFq1hhecU2VUYKoLDfFzBf2M';  // Substitua pelo seu token
 
 async function obterSeriesPopulares() {
@@ -32,12 +32,13 @@ function atualizarCarrossel(series) {
     
     series.forEach((serie, index) => {
         const ativo = index === 0 ? 'active' : ''; // Marcar o primeiro item como ativo
+
         const itemCarrossel = `
-            <div class="carousel-item ${ativo}">
-                <img src="https://image.tmdb.org/t/p/w500${serie.poster_path}" class="d-block w-100" alt="${serie.title}">
+            <div class="carousel-item ${ativo}" onclick="redirecionarParaDetalhes(${serie.id})">
+                <img src="https://image.tmdb.org/t/p/w500${serie.poster_path}" class="d-block w-100" alt="${serie.name}">
                 <div class="fade-overlay"></div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>${serie.title}</h5>
+                    <h5>${serie.name}</h5>
                     <p>${serie.overview}</p>
                 </div>
             </div>
@@ -51,6 +52,12 @@ function atualizarCarrossel(series) {
         carouselIndicators.innerHTML += indicador;
     });
 }
+
+// Função para redirecionar para a tela de detalhes
+function redirecionarParaDetalhes(id) {
+    window.location.href = `../details/detalhes-serie.html?id=${id}`;
+}
+
 
 // Chamar a função para carregar as séries populares
 obterSeriesPopulares();
