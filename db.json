@@ -1,27 +1,44 @@
 {
-    "perfil": [
-      {
-        "id": 1,
-        "nome": "Samuel Mascarenhas",
-        "curso": "Ciências da Computação",
-        "email": "seuemail@example.com",
-        "facebook": "https://facebook.com/seu-perfil",
-        "twitter": "https://twitter.com/seu-perfil",
-        "instagram": "https://instagram.com/seu-perfil",
-        "mini_bio": "Sou um estudante apaixonado por tecnologia e desenvolvimento de sistemas, com interesse em APIs, bancos de dados e front-end. Tenho experiência com desenvolvimento de aplicações web e sou sempre curioso para aprender novas tecnologias."
-      }
-    ],
-    "series_favoritas": [
-      {
-        "id": 1,
-        "serie_id": 12345,
-        "usuario_id": 1
-      },
-      {
-        "id": 2,
-        "serie_id": 67890,
-        "usuario_id": 1
-      }
-    ]
-  }
-  
+  "student": {
+    "about": "Sou um entusiasta de tecnologia com uma paixão por design e criatividade. Minha formação em Técnico em Desenvolvimento de Sistemas, juntamente com minha atual graduação em Ciência da Computação, reflete meu compromisso com o aprendizado contínuo e a inovação no mundo digital.",
+    "name": "Samuel Mascarenhas",
+    "course": "Ciência da Computação",
+    "class": "Manhã",
+    "profileImage": "../assets/img/IMG-LOGO/132409836.jfif",
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/in/samuellmascarenhas/",
+      "github": "https://github.com/SamuellMascarenhas",
+      "portfolio": "https://samuellmascarenhas.github.io/Portfolio/"
+    }
+  },
+  "series_favoritas": [
+    {
+      "id": 66732,
+      "nome": "Stranger Things",
+      "descricao": "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.",
+      "imagem": "https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=66732"
+    },
+    {
+      "id": 1396,
+      "nome": "Breaking Bad: A Química do Mal",
+      "descricao": "Ao saber que tem câncer, um professor passa a fabricar metanfetamina pelo futuro da família, mudando o destino de todos.",
+      "imagem": "https://image.tmdb.org/t/p/w500/30erzlzIOtOK3k3T3BAl1GiVMP1.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=1396"
+    },
+    {
+      "id": 70523,
+      "nome": "Dark",
+      "descricao": "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
+      "imagem": "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=70523"
+    },
+    {
+      "id": 77169,
+      "nome": "Cobra Kai",
+      "descricao": "Nesta aclamada série que é continuação dos filmes Karatê Kid, Daniel e Johnny retomam a rivalidade dos tempos de escola.",
+      "imagem": "https://image.tmdb.org/t/p/w500/6GDW4EsgsXlYrL1ASb5eCHQK4er.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=77169"
+    }
+  ]
+}

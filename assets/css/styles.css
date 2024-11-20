@@ -21,6 +21,7 @@ header.bg-light {
 
 header .nav-item a {
     color: red;
+    font-weight: 700;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -169,21 +170,29 @@ header .nav-item a {
 /* Sombra com gradiente nas imagens do carrossel */
 .carousel-item {
     width: 100%;
-  height: auto;
+    height: auto;
     cursor: pointer;
-    border-radius: 990px;
+ 
+    position: relative;
+    overflow: hidden; /* Garante que os efeitos não saiam da borda */
 }
 
-
+/* Imagem do carrossel */
 .carousel-item img {
+
     width: 100%;
     height: 100vh;
-    object-fit:contain;
-  
+    object-fit:cover; /* Melhora o ajuste da imagem */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Efeito de zoom e opacidade no hover */
+.carousel-item img:hover {
+    transform: scale(1.05); /* Aumenta a imagem suavemente */
+    opacity: 0.9; /* Leve efeito de opacidade */
+}
 
-/* Gradiente */
+/* Gradiente de sobreposição */
 .fade-overlay {
     position: absolute;
     top: 0;
@@ -191,18 +200,14 @@ header .nav-item a {
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 30%),
-        /* Gradiente de baixo para cima */
         linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 30%),
-        /* Gradiente de cima para baixo */
         linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 30%),
-        /* Gradiente da esquerda para a direita */
         linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 30%);
-    /* Gradiente da direita para a esquerda */
     z-index: 1;
     pointer-events: none;
-
 }
 
+/* Estilo da legenda do carrossel */
 .carousel-caption {
     position: absolute;
     bottom: 20px;
@@ -212,27 +217,71 @@ header .nav-item a {
     color: white;
     text-align: center;
     width: 100%;
-    
 }
 
+/* Tamanho e estilo do título da legenda */
 .carousel-caption h5 {
     font-size: 25px;
+    font-weight: 700;
     font-family: "Montserrat", sans-serif;
     margin: 0;
 }
 
+/* Estilo do parágrafo da legenda */
 .carousel-caption p {
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;  /* Tamanho da fonte para leitura mais fácil */
-    width: 80%;  /* Aumenta a largura do parágrafo para melhorar a legibilidade */
+    font-size: 14px;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
+/* Tamanho e ajuste do carrossel */
 .carousel-inner {
-
     height: 100vh;
+}
 
+/* Efeito de borda animada ao redor da imagem */
+.carousel-item-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+}
+
+/* Fundo de desfoque e borda */
+.carousel-item-container .bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90%;
+    height: 90%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(24px);
+    border-radius: 14px;
+    outline: 2px solid white;
+    pointer-events: none;
+}
+
+
+
+/* Estilo para o indicador do carrossel */
+.carousel-indicators {
+    position: absolute;
+    bottom: -33px;
+    z-index: 10;
+}
+.carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+.carousel-indicators .active {
+    background-color: #ff0000;
 }
 
 
