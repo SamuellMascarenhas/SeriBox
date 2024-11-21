@@ -48,7 +48,7 @@ app.post('/series_favoritas', (req, res) => {
   const serie = req.body;  // A série que está sendo adicionada
   // Verificar se a série já está nos favoritos
   if (favoritos.some(fav => fav.id === serie.id)) {
-      return res.status(400).json({ message: 'Série já está nos favoritos.' });
+    return res.status(400).json({ message: 'Série já está nos favoritos.' });
   }
   favoritos.push(serie);  // Adiciona a série
   res.status(200).json({ message: 'Série adicionada aos favoritos!' });
@@ -58,7 +58,7 @@ app.delete('/series_favoritas/:id', (req, res) => {
   const { id } = req.params;
   const index = favoritos.findIndex(fav => fav.id === id);
   if (index === -1) {
-      return res.status(404).json({ message: 'Série não encontrada nos favoritos.' });
+    return res.status(404).json({ message: 'Série não encontrada nos favoritos.' });
   }
   favoritos.splice(index, 1);  // Remove a série
   res.status(200).json({ message: 'Série removida dos favoritos!' });

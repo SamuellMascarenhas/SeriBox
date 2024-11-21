@@ -141,13 +141,13 @@ async function obterElenco(id) {
 // Função para atualizar o elenco no HTML
 function atualizarElenco(elenco) {
     const elencoContainer = document.getElementById('elencoContainer');
-    
+
     // Verifique se o contêiner existe antes de tentar acessá-lo
     if (!elencoContainer) {
         console.error('Elemento com id "elencoContainer" não encontrado!');
         return;
     }
-    
+
     // Limpa o conteúdo existente
     elencoContainer.innerHTML = '';
 
@@ -161,10 +161,10 @@ function atualizarElenco(elenco) {
     elenco.slice(0, 8).forEach(ator => { // Exibe até 8 membros do elenco
         const card = document.createElement('div');
         card.classList.add('col');
-        
+
         // Cria a estrutura do card com informações dinâmicas
-         // Cria a estrutura do card com informações dinâmicas (imagem, nome, e descrição)
-         card.innerHTML = `
+        // Cria a estrutura do card com informações dinâmicas (imagem, nome, e descrição)
+        card.innerHTML = `
          <div class="card">
                 <img src="${ator.profile_path ? `https://image.tmdb.org/t/p/w500${ator.profile_path}` : 'caminho/default.jpg'}" class="card-img-top" alt="${ator.name}">
                 <div class="card-body">
@@ -173,8 +173,8 @@ function atualizarElenco(elenco) {
                 </div>
             </div>
      `;
-     
-        
+
+
         // Adiciona o card ao contêiner
         elencoContainer.appendChild(card);
     });

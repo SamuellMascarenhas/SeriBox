@@ -172,9 +172,10 @@ header .nav-item a {
     width: 100%;
     height: auto;
     cursor: pointer;
- 
+
     position: relative;
-    overflow: hidden; /* Garante que os efeitos não saiam da borda */
+    overflow: hidden;
+    /* Garante que os efeitos não saiam da borda */
 }
 
 /* Imagem do carrossel */
@@ -182,14 +183,17 @@ header .nav-item a {
 
     width: 100%;
     height: 100vh;
-    object-fit:cover; /* Melhora o ajuste da imagem */
+    object-fit: cover;
+    /* Melhora o ajuste da imagem */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Efeito de zoom e opacidade no hover */
 .carousel-item img:hover {
-    transform: scale(1.05); /* Aumenta a imagem suavemente */
-    opacity: 0.9; /* Leve efeito de opacidade */
+    transform: scale(1.05);
+    /* Aumenta a imagem suavemente */
+    opacity: 0.9;
+    /* Leve efeito de opacidade */
 }
 
 /* Gradiente de sobreposição */
@@ -276,10 +280,12 @@ header .nav-item a {
     bottom: -33px;
     z-index: 10;
 }
+
 .carousel-indicators li {
     background-color: rgba(255, 255, 255, 0.5);
 
 }
+
 .carousel-indicators .active {
     background-color: #ff0000;
 }
@@ -634,8 +640,10 @@ header .nav-item a {
 .elenco-card {
     /* Ajuste o tamanho do card */
     width: 100%;
-    max-width: 250px; /* Tamanho reduzido do card */
-    margin: 0 auto; /* Centraliza os cards */
+    max-width: 250px;
+    /* Tamanho reduzido do card */
+    margin: 0 auto;
+    /* Centraliza os cards */
 }
 
 .elenco-card-img {
@@ -646,8 +654,10 @@ header .nav-item a {
 
 .elenco-card-title,
 .elenco-card-text {
-    color: black; /* Cor preta para o nome e a descrição */
-    font-weight: normal; /* Caso queira reduzir o peso da fonte */
+    color: black;
+    /* Cor preta para o nome e a descrição */
+    font-weight: normal;
+    /* Caso queira reduzir o peso da fonte */
 }
 
 .elenco-card-body {
@@ -662,7 +672,8 @@ header .nav-item a {
 
 @media (max-width: 768px) {
     .elenco-card {
-        max-width: 100%; /* Ajusta para uma largura maior em telas menores */
+        max-width: 100%;
+        /* Ajusta para uma largura maior em telas menores */
     }
 }
 
