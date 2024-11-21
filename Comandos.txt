@@ -1,0 +1,4 @@
+Para garantir o funcionamento desta aplicação:
+
+- Para start do index.js use: npm start;
+- Para start do servidor use : json-server --watch db.json --port 3001
