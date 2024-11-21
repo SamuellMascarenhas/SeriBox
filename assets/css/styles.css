@@ -595,9 +595,7 @@ header .nav-item a {
     flex-direction: column;
 }
 
-.serie-details,
-.elenco,
-.temporadas-episodios {
+.serie-details {
     background-color: #000;
     padding: 20px;
     border-radius: 8px;
@@ -633,56 +631,39 @@ header .nav-item a {
     color: #ccc;
 }
 
-/* Estilos para a seção de Elenco */
-
-
-.elenco h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 15px;
+.elenco-card {
+    /* Ajuste o tamanho do card */
+    width: 100%;
+    max-width: 250px; /* Tamanho reduzido do card */
+    margin: 0 auto; /* Centraliza os cards */
 }
 
-.elenco img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+.elenco-card-img {
+    /* Ajusta o tamanho da imagem */
+    width: 100%;
+    height: auto;
 }
 
-/* Estilos para a seção de Temporadas e Episódios */
-
-.row-1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    width: 80%;
-    margin-top: 40px;
+.elenco-card-title,
+.elenco-card-text {
+    color: black; /* Cor preta para o nome e a descrição */
+    font-weight: normal; /* Caso queira reduzir o peso da fonte */
 }
 
-.row-1 h4 {
-    text-align: center;
+.elenco-card-body {
+    /* Ajustes no corpo do card */
+    padding: 10px;
 }
 
-.temporadas-episodios h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 15px;
+.title-section span {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.temporadas-episodios h4 {
-    font-size: 1.5rem;
-    margin-top: 15px;
-}
-
-.temporadas-episodios ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.temporadas-episodios ul li {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #fff;
+@media (max-width: 768px) {
+    .elenco-card {
+        max-width: 100%; /* Ajusta para uma largura maior em telas menores */
+    }
 }
 
 /* Estilos da seção de pesquisa */

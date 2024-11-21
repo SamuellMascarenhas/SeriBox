@@ -45,32 +45,27 @@ app.get('/series_favoritas', (req, res) => {
 
 // Rota POST para adicionar uma série aos favoritos
 app.post('/series_favoritas', (req, res) => {
-  const serie = req.body; // Obtém os dados da série enviados no corpo da requisição
-  const seriesFavoritas = lerSeriesFavoritas(); // Lê as séries favoritas atuais
-  seriesFavoritas.push(serie); // Adiciona a nova série ao array
-  salvarSeriesFavoritas(seriesFavoritas); // Salva as séries favoritas atualizadas no arquivo
-  res.status(201).json(serie); // Retorna a série adicionada com o status HTTP 201 (Criado)
-});
-
-// Rota DELETE para remover uma série dos favoritos
-app.delete('/series_favoritas/:id', (req, res) => {
-  const serieId = Number(req.params.id); // Obtém o ID da série a partir dos parâmetros da URL, convertendo para número
-  console.log("ID recebido para remoção:", serieId); // Log para debug
-
-  const seriesFavoritas = lerSeriesFavoritas(); // Lê as séries favoritas do arquivo
-  console.log("Séries favoritas:", seriesFavoritas); // Log para ver as séries favoritas no momento
-
-  const index = seriesFavoritas.findIndex(serie => serie.id === serieId); // Busca o índice da série pelo ID
-  console.log("Índice encontrado:", index); // Log para verificar o índice encontrado
-
-  if (index !== -1) { // Se o índice da série for encontrado
-    seriesFavoritas.splice(index, 1); // Remove a série do array usando o índice
-    salvarSeriesFavoritas(seriesFavoritas); // Salva as séries favoritas atualizadas no arquivo
-    res.status(200).json({ message: 'Série removida dos favoritos' }); // Retorna uma mensagem de sucesso
-  } else {
-    res.status(404).json({ error: 'Série não encontrada' }); // Se o ID não for encontrado, retorna erro 404
+  const serie = req.body;  // A série que está sendo adicionada
+  // Verificar se a série já está nos favoritos
+  if (favoritos.some(fav => fav.id === serie.id)) {
+      return res.status(400).json({ message: 'Série já está nos favoritos.' });
   }
+  favoritos.push(serie);  // Adiciona a série
+  res.status(200).json({ message: 'Série adicionada aos favoritos!' });
 });
+
+app.delete('/series_favoritas/:id', (req, res) => {
+  const { id } = req.params;
+  const index = favoritos.findIndex(fav => fav.id === id);
+  if (index === -1) {
+      return res.status(404).json({ message: 'Série não encontrada nos favoritos.' });
+  }
+  favoritos.splice(index, 1);  // Remove a série
+  res.status(200).json({ message: 'Série removida dos favoritos!' });
+});
+
+
+
 
 // Rota para servir arquivos estáticos da pasta 'assets' (CSS, imagens, etc.)
 app.use('/assets', express.static(path.join(__dirname, 'assets')));

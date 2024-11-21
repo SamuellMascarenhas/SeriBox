@@ -13,32 +13,34 @@
   },
   "series_favoritas": [
     {
-      "id": 66732,
-      "nome": "Stranger Things",
-      "descricao": "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.",
-      "imagem": "https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
-      "detalhesUrl": "detalhes-serie.html?id=66732"
-    },
-    {
-      "id": 1396,
+      "id": "1396",
       "nome": "Breaking Bad: A Química do Mal",
       "descricao": "Ao saber que tem câncer, um professor passa a fabricar metanfetamina pelo futuro da família, mudando o destino de todos.",
       "imagem": "https://image.tmdb.org/t/p/w500/30erzlzIOtOK3k3T3BAl1GiVMP1.jpg",
       "detalhesUrl": "detalhes-serie.html?id=1396"
     },
     {
+      "id": "77169",
+      "nome": "Cobra Kai",
+      "descricao": "Nesta aclamada série que é continuação dos filmes Karatê Kid, Daniel e Johnny retomam a rivalidade dos tempos de escola.",
+      "imagem": "https://image.tmdb.org/t/p/w500/6GDW4EsgsXlYrL1ASb5eCHQK4er.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=77169"
+    },
+    {
+      "id": 66732,
+      "nome": "Stranger Things",
+      "descricao": "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.",
+      "imagem": "https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=66732"
+    },
+  
+    {
       "id": 70523,
       "nome": "Dark",
       "descricao": "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
       "imagem": "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg",
       "detalhesUrl": "detalhes-serie.html?id=70523"
-    },
-    {
-      "id": 77169,
-      "nome": "Cobra Kai",
-      "descricao": "Nesta aclamada série que é continuação dos filmes Karatê Kid, Daniel e Johnny retomam a rivalidade dos tempos de escola.",
-      "imagem": "https://image.tmdb.org/t/p/w500/6GDW4EsgsXlYrL1ASb5eCHQK4er.jpg",
-      "detalhesUrl": "detalhes-serie.html?id=77169"
     }
+    
   ]
 }

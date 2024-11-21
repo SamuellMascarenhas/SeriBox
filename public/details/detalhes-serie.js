@@ -116,9 +116,76 @@ async function removerDosFavoritos(serie) {
     }
 }
 
+// Função para buscar o elenco da série
+async function obterElenco(id) {
+    try {
+        console.log('Buscando elenco para a série com ID:', id); // Log de depuração
+        const response = await fetch(`${apiUrl}/tv/${id}/credits?api_key=${apiKey}&language=pt-BR`);
+        if (!response.ok) throw new Error('Erro ao buscar elenco da série');
+
+        const elencoData = await response.json();
+        console.log('Elenco da série:', elencoData); // Log de depuração
+
+        if (elencoData && elencoData.cast) {
+            atualizarElenco(elencoData.cast);
+        } else {
+            console.error('Elenco não encontrado na resposta da API');
+            document.getElementById('elenco').innerHTML = '<p>Elenco não disponível.</p>';
+        }
+    } catch (error) {
+        console.error('Erro ao buscar elenco:', error);
+        document.getElementById('elenco').innerHTML = '<p>Erro ao carregar elenco.</p>';
+    }
+}
+
+// Função para atualizar o elenco no HTML
+function atualizarElenco(elenco) {
+    const elencoContainer = document.getElementById('elencoContainer');
+    
+    // Verifique se o contêiner existe antes de tentar acessá-lo
+    if (!elencoContainer) {
+        console.error('Elemento com id "elencoContainer" não encontrado!');
+        return;
+    }
+    
+    // Limpa o conteúdo existente
+    elencoContainer.innerHTML = '';
+
+    // Verifique se o elenco não está vazio
+    if (elenco.length === 0) {
+        elencoContainer.innerHTML = '<p>Elenco não disponível.</p>';
+        return;
+    }
+
+    // Adiciona os cards do elenco
+    elenco.slice(0, 8).forEach(ator => { // Exibe até 8 membros do elenco
+        const card = document.createElement('div');
+        card.classList.add('col');
+        
+        // Cria a estrutura do card com informações dinâmicas
+         // Cria a estrutura do card com informações dinâmicas (imagem, nome, e descrição)
+         card.innerHTML = `
+         <div class="card">
+                <img src="${ator.profile_path ? `https://image.tmdb.org/t/p/w500${ator.profile_path}` : 'caminho/default.jpg'}" class="card-img-top" alt="${ator.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${ator.name}</h5>
+                    <p class="card-text">${ator.character || 'Personagem não informado'}</p>
+                </div>
+            </div>
+     `;
+     
+        
+        // Adiciona o card ao contêiner
+        elencoContainer.appendChild(card);
+    });
+}
+
+
+
 // Chamar a função com o ID da série
 if (movieId) {
     obterDetalhesSerie(movieId);
+    obterElenco(movieId); // Nova chamada para buscar e exibir o elenco
 } else {
     console.error('ID da série não encontrado na URL');
 }
