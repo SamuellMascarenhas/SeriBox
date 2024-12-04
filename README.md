@@ -1,65 +1,117 @@
-# 🌐 SeriBox - Desafio de Desenvolvimento de Interfaces Web
+# 🎬 SeriBox - Portal de Séries Dinâmico
 
 ![SERI](https://github.com/user-attachments/assets/457cb4e6-96f6-4ebf-8dac-522a623c7466)
 
-
 ## 🎓 Introdução
 
-Bem-vindo ao **SeriBox**! Este projeto foi desenvolvido como parte do desafio da disciplina de **Desenvolvimento de Interfaces Web**. O objetivo foi criar um site estático e responsivo utilizando apenas HTML e CSS, sem a utilização de JavaScript. A plataforma oferece uma experiência visual atraente para amantes de séries e filmes.
+Bem-vindo ao **SeriBox**! Este projeto foi desenvolvido como parte do desafio da disciplina de **Desenvolvimento de Interfaces Web**. Agora, o objetivo é criar um portal dinâmico de séries que integra a API **The Movie DB (TMDb)** para informações sobre séries e utiliza o **JSONServer** como back-end, oferecendo uma experiência interativa e rica para os amantes de séries.
 
 ## 📋 Descrição do Projeto
 
-O **SeriBox** consiste em três telas principais:
+O **SeriBox** consiste em três telas principais que trazem informações dinâmicas obtidas de APIs e armazenadas localmente:
 
-1. **Tela Principal (index.html)**: Um ponto de partida vibrante que apresenta as séries mais populares, novidades e informações sobre o criador do site.
-   
-2. **Tela de Exploração (explorer.html)**: Permite aos usuários pesquisar e filtrar séries disponíveis, oferecendo uma visualização clara e acessível.
+1. **Tela Principal (index.html)**: Apresenta destaques, séries novas, informações sobre o autor e favoritas.
+2. **Tela de Exploração (explorer.html)**: Permite pesquisar séries de forma dinâmica.
+3. **Tela de Detalhes da Série (detalhes.html)**: Exibe detalhes específicos de uma série, incluindo elenco e opção de marcar como favorita.
 
-3. **Tela de Detalhes da Série (serie.html)**: Exibe informações detalhadas sobre uma série específica, incluindo elenco e episódios.
+## 🖥️ Estrutura do Site e Funcionalidades
 
-## 🖥️ Estrutura do Site e Wireframe
+### Tela Principal (index.html)
 
-<img width="3760" alt="Wireframe - Trabalho" src="https://github.com/user-attachments/assets/3f74ca0c-d910-4d88-b73a-be321e1cf006">
+1. **Cabeçalho**: Contém logo e menu de navegação.
+2. **Carrossel de Séries Populares**: Exibe as séries mais populares, com imagens, nomes e descrições, utilizando dados obtidos da API TMDb.
+3. **Novidades**: Cards que mostram as séries mais recentes.
+4. **Informações do Autor**: Dados pessoais e profissionais do criador do portal, obtidos do JSONServer.
+5. **Séries Favoritas**: Lista de séries favoritas marcadas pelo usuário.
 
+---
 
-### Tela Principal
+### Tela de Exploração (explorer.html)
 
-- **Cabeçalho**: Logo e menu de navegação.
-- **Carrossel de Séries Populares**: Destaque para as séries em alta, com imagens, nomes e descrições.
-- **Novidades**: Cards com informações das séries mais recentes.
-- **Sobre o Criador**: Uma breve descrição do responsável pela criação do site.
-- **Séries Favoritas**: Seção para exibir os cards das séries favoritas.
+1. **Campo de Pesquisa**: Permite buscar séries por nome, consultando a API TMDb.
+2. **Resultados da Pesquisa**: Exibição de cards com as séries retornadas, contendo imagem, nome e detalhes.
+3. **Navegação para Detalhes**: Clique em uma série redireciona para a tela de detalhes.
 
-### Tela de Exploração
+---
 
-- **Campo de Pesquisa**: Local para buscar séries específicas.
-- **Filtros Personalizados**: Opções de filtro para aprimorar a busca.
-- **Cards de Séries**: Exibição das séries retornadas pela pesquisa.
+### Tela de Detalhes (detalhes.html)
 
-### Tela de Detalhes da Série
+1. **Informações Gerais**: Apresenta dados como título, sinopse, data de lançamento e outras informações relevantes da série.
+2. **Elenco**: Lista de atores principais com fotos e nomes, obtidos da API TMDb.
+3. **Marcar como Favorita**: Opção de salvar a série no JSONServer como favorita.
 
-- **Informações Gerais**: Descrição completa da série, incluindo imagem e plataforma de exibição.
-- **Elenco**: Fotos e nomes dos atores.
-- **Temporadas e Episódios**: Detalhes sobre as temporadas e episódios disponíveis.
+---
+
+### Estrutura de Dados - JSONServer
+
+O projeto utiliza duas principais estruturas no arquivo `db.json` do JSONServer:
+
+1. **Perfil do Usuário**:
+   ```json
+   {
+       "id": 1,
+       "nome": "Samuel Mascarenhas",
+       "curso": "Ciências da Computação",
+       "email": "exemplo@email.com",
+       "redes": {
+           "facebook": "link_facebook",
+           "twitter": "link_twitter",
+           "instagram": "link_instagram"
+       },
+       "bio": "Apaixonado por tecnologia e séries.",
+       "avatar": "url_imagem"
+   }
+2. **Séries Favoritas**:
+```json
+
+    {
+        "id": "1",
+        "nome": "Breaking Bad",
+        "descricao":"",
+        "imagem":"",
+        "detalhesUrl":""
+    }
+```
+---
 
 ## 🚀 Como Rodar o Projeto Localmente
+### Requisitos
+- Node.js
+- JSONServer
+- Chave da API TMDb
 
-Para visualizar o projeto em seu navegador, siga os passos abaixo:
+## Passos
+### Clone o repositório:
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu_usuario/SeriBox.git
-   cd SeriBox
-Abra o arquivo index.html em seu navegador.
-🛠️ Tecnologias Utilizadas
-HTML5
-CSS3
-Bootstrap (para componentes responsivos)
-📝 Considerações Finais
-Este projeto representa um passo significativo no aprendizado de desenvolvimento de interfaces web. O uso de boas práticas de design e responsividade são fundamentais para criar uma experiência agradável ao usuário.
+```bash
 
-📬 Contato
-Para dúvidas ou sugestões, entre em contato através do e-mail: https://www.linkedin.com/in/samuellmascarenhas/
+git clone https://github.com/seu_usuario/SeriBox.git
+cd SeriBox
+```
+### Instale e inicie o JSONServer:
 
-🎉 Agradeço pela oportunidade de desenvolver este projeto e espero que você desfrute da experiência no SeriBox! 🌟
+```bash
+npm install -g json-server
+json-server --watch db.json
+```
+### Configure sua chave da API TMDb:
 
+- Substitua API_KEY no arquivo script.js pela sua chave da TMDb.
+- Abra o arquivo index.html no navegador para visualizar o portal.
+
+ ## 🛠️ Tecnologias Utilizadas
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap (componentes responsivos)
+- JSONServer (back-end)
+- API TMDb (integração dinâmica)
+
+## 📝 Considerações Finais
+O SeriBox foi projetado para oferecer uma experiência intuitiva e envolvente. Com o uso de tecnologias modernas, ele demonstra a importância da integração de APIs e da construção de aplicações dinâmicas.
+
+## 📬 Contato
+Dúvidas ou sugestões? Entre em contato:
+🔗 https://www.linkedin.com/in/samuellmascarenhas/
+
+🎉 Aproveite sua jornada no SeriBox! 🌟
