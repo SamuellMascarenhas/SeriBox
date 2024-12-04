@@ -27,20 +27,18 @@
       "detalhesUrl": "detalhes-serie.html?id=77169"
     },
     {
-      "id": 66732,
+      "id": "66732",
       "nome": "Stranger Things",
       "descricao": "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.",
       "imagem": "https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
       "detalhesUrl": "detalhes-serie.html?id=66732"
     },
-  
     {
-      "id": 70523,
+      "id": "70523",
       "nome": "Dark",
       "descricao": "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
       "imagem": "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg",
       "detalhesUrl": "detalhes-serie.html?id=70523"
     }
-    
   ]
 }
