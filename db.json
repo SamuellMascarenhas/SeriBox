@@ -39,6 +39,13 @@
       "descricao": "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
       "imagem": "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg",
       "detalhesUrl": "detalhes-serie.html?id=70523"
+    },
+    {
+      "id": 60625,
+      "nome": "Rick e Morty",
+      "descricao": "Rick é um velho mentalmente desequilibrado, mas cientificamente talentoso que se reconectou recentemente com sua família. Ele passa a maior parte do tempo envolvendo o jovem neto Morty em aventuras perigosas e estranhas no espaço e em universos alternativos. Compostos à vida familiar já instável de Morty, esses eventos causam muito sofrimento a Morty em casa e na escola.",
+      "imagem": "https://image.tmdb.org/t/p/w500/5qfd0e2uMbVInX3YdeFbDsfxi1t.jpg",
+      "detalhesUrl": "detalhes-serie.html?id=60625"
     }
   ]
 }
