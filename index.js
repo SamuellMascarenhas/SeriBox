@@ -3,7 +3,7 @@ const express = require('express'); // Express é usado para criar o servidor HT
 const path = require('path'); // Módulo para manipulação de caminhos de arquivos
 const fs = require('fs'); // Módulo para ler e escrever em arquivos
 const app = express(); // Inicializa uma instância do Express
-const port = 3000; // Definição da porta onde o servidor vai rodar
+const port = "https://seriebox.vercel.app/"; // Definição da porta onde o servidor vai rodar
 const axios = require('axios'); // Axios é utilizado para fazer requisições HTTP externas
 
 // Definindo a chave da API que será usada para se comunicar com a API do TMDb
